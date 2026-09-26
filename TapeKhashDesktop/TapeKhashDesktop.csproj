@@ -18,4 +18,10 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
+  <!-- بر خلاف .NET 5+، در net48 با SDK-style csproj این اسمبلی‌ها به‌صورت خودکار
+       رفرنس نمی‌شوند و باید صریحاً اضافه شوند، وگرنه HttpClient/JSON پیدا نمی‌شود. -->
+  <ItemGroup>
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+
 </Project>
