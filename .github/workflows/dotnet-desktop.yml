@@ -1,0 +1,40 @@
+name: Build Windows Desktop App
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore TapeKhashDesktop/TapeKhashDesktop.csproj
+
+      - name: Build (Release, net48)
+        run: dotnet build TapeKhashDesktop/TapeKhashDesktop.csproj -c Release -o publish
+
+      - name: Build installer with Inno Setup
+        run: |
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer.iss
+        shell: pwsh
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: TapeKhashDesktop-Setup
+          path: Output/TapeKhashDesktop-Setup.exe
+
+      - name: Upload raw build output (fallback, no installer needed)
+        uses: actions/upload-artifact@v4
+        with:
+          name: TapeKhashDesktop-raw-build
+          path: publish/**
