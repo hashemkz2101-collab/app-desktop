@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <!-- net48 = .NET Framework 4.8: تنها گزینه‌ای که هم روی ویندوز ۷ SP1 و هم ویندوز ۱۰ کار می‌کند
+         (نسخه‌های .NET 5+ فقط از ویندوز ۱۰ به بعد پشتیبانی می‌شوند). -->
+    <TargetFramework>net48</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>TapeKhashDesktop</AssemblyName>
+    <RootNamespace>TapeKhashDesktop</RootNamespace>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

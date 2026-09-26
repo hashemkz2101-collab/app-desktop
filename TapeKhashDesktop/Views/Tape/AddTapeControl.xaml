@@ -1,0 +1,22 @@
+<UserControl x:Class="TapeKhashDesktop.Views.Tape.AddTapeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="16" Width="420" HorizontalAlignment="Center">
+        <TextBlock Text="ثبت تپه‌ی جدید یا افزودن عکس" FontWeight="Bold" FontSize="16" Margin="0,0,0,12" />
+
+        <TextBox x:Name="BoxCodeBox" />
+        <TextBlock Text="کد باکس" Foreground="Gray" FontSize="11" Margin="8,-2,0,8" />
+
+        <TextBox x:Name="TapeCodeBox" />
+        <TextBlock Text="کد تپه (مثل G12 یا B34)" Foreground="Gray" FontSize="11" Margin="8,-2,0,8" />
+
+        <Button Content="انتخاب عکس از فایل‌ها (اختیاری)" Click="OnPickImageClick" />
+        <Image x:Name="PreviewImage" Height="140" Margin="4" Stretch="Uniform" />
+
+        <TextBlock x:Name="ErrorText" Foreground="Red" TextWrapping="Wrap" Margin="4,8,4,0" />
+        <TextBlock x:Name="MessageText" Foreground="Green" TextWrapping="Wrap" Margin="4,4,4,0" />
+
+        <Button x:Name="SubmitButton" Content="ثبت" Click="OnSubmitClick" Height="36" Margin="4,16,4,0" />
+        <ProgressBar x:Name="Progress" IsIndeterminate="True" Height="4" Visibility="Collapsed" Margin="4,8,4,0" />
+    </StackPanel>
+</UserControl>

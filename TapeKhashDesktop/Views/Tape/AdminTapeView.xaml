@@ -1,0 +1,13 @@
+<UserControl x:Class="TapeKhashDesktop.Views.Tape.AdminTapeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TapeKhashDesktop.Views.Tape">
+    <TabControl>
+        <TabItem Header="کاربران"><local:UsersManagementControl /></TabItem>
+        <TabItem Header="کاربران فعال"><local:ActiveUsersControl /></TabItem>
+        <TabItem Header="تاریخچه"><local:HistoryControl /></TabItem>
+        <TabItem Header="ایمپورت اکسل"><local:ExcelImportControl /></TabItem>
+        <TabItem Header="ویرایش تپه"><local:EditTapeControl /></TabItem>
+        <TabItem Header="همگام‌سازی فایل‌ها"><local:FileSyncControl /></TabItem>
+    </TabControl>
+</UserControl>

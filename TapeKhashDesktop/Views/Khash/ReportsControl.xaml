@@ -1,0 +1,32 @@
+<UserControl x:Class="TapeKhashDesktop.Views.Khash.ReportsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Loaded="OnLoaded">
+    <ScrollViewer>
+        <StackPanel Margin="16">
+            <TextBlock Text="داشبورد امروز" FontWeight="Bold" FontSize="15" Margin="0,0,0,8" />
+            <Border BorderBrush="#DDD" BorderThickness="1" Padding="10">
+                <StackPanel x:Name="TodayPanel" />
+            </Border>
+
+            <TextBlock Text="خلاصه‌ی کلی سفارشات خاش" FontWeight="Bold" FontSize="15" Margin="0,20,0,8" />
+            <Border BorderBrush="#DDD" BorderThickness="1" Padding="10">
+                <StackPanel x:Name="SummaryPanel" />
+            </Border>
+
+            <TextBlock Text="گزارش بر اساس تاریخ" FontWeight="Bold" FontSize="15" Margin="0,20,0,8" />
+            <ItemsControl x:Name="ByDateList">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="#DDD" BorderThickness="1" Padding="8" Margin="0,3">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Date}" FontWeight="Bold" />
+                                <TextBlock Text="{Binding Summary}" />
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

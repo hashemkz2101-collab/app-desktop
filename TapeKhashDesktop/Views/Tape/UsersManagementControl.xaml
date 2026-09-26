@@ -1,0 +1,15 @@
+<UserControl x:Class="TapeKhashDesktop.Views.Tape.UsersManagementControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Loaded="OnLoaded">
+    <DockPanel Margin="12">
+        <Grid DockPanel.Dock="Top" Margin="0,0,0,8">
+            <TextBlock Text="کاربران سیستم" FontWeight="Bold" FontSize="15" VerticalAlignment="Center" />
+            <Button Content="+ کاربر جدید" HorizontalAlignment="Left" Click="OnAddUserClick" />
+        </Grid>
+        <TextBlock x:Name="ErrorText" DockPanel.Dock="Top" Foreground="Red" TextWrapping="Wrap" />
+        <ScrollViewer>
+            <StackPanel x:Name="UsersPanel" />
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

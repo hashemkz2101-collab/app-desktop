@@ -1,0 +1,57 @@
+<UserControl x:Class="TapeKhashDesktop.Views.Khash.InvoicesControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Loaded="OnLoaded">
+    <ScrollViewer>
+        <StackPanel Margin="16">
+            <TextBlock Text="ثبت فاکتور جدید" FontWeight="Bold" FontSize="15" Margin="0,0,0,8" />
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="CodeBox" Width="100" TextChanged="OnNumberPartChanged" />
+                <TextBox x:Name="RowBox" Width="80" TextChanged="OnNumberPartChanged" />
+                <TextBox x:Name="SimilarBox" Width="80" TextChanged="OnNumberPartChanged" />
+                <Button Content="پیشنهاد شماره بعدی" Click="OnSuggestClick" />
+            </StackPanel>
+            <TextBlock x:Name="PreviewText" Text="شماره کامل: —" Margin="4,4,4,8" />
+
+            <TextBox x:Name="AmountBox" />
+            <TextBlock Text="مبلغ کل" Foreground="Gray" FontSize="11" Margin="8,-2,0,8" />
+
+            <ComboBox x:Name="EmployeeCombo" />
+            <TextBlock Text="نیرو" Foreground="Gray" FontSize="11" Margin="8,-2,0,8" />
+
+            <TextBox x:Name="DateBox" />
+            <TextBlock Text="تاریخ شمسی (خالی = امروز) مثل 1405/07/03" Foreground="Gray" FontSize="11" Margin="8,-2,0,8" />
+
+            <TextBox x:Name="DescriptionBox" />
+            <TextBlock Text="توضیحات" Foreground="Gray" FontSize="11" Margin="8,-2,0,8" />
+
+            <TextBlock x:Name="ErrorText" Foreground="Red" TextWrapping="Wrap" Margin="4,8,4,0" />
+            <TextBlock x:Name="MessageText" Foreground="Green" TextWrapping="Wrap" Margin="4,4,4,0" />
+
+            <Button Content="ثبت فاکتور" Click="OnSubmitClick" Height="36" Margin="4,12,4,0" />
+
+            <Separator Margin="0,20,0,12" />
+            <Grid>
+                <TextBlock Text="لیست فاکتورها" FontWeight="Bold" FontSize="15" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBox x:Name="QueryBox" Width="160" />
+                    <Button Content="جستجو" Click="OnSearchClick" />
+                </StackPanel>
+            </Grid>
+
+            <ItemsControl x:Name="InvoicesList" Margin="0,8,0,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="#DDD" BorderThickness="1" Padding="8" Margin="0,3">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Number}" FontWeight="Bold" />
+                                <TextBlock Text="{Binding Summary}" />
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

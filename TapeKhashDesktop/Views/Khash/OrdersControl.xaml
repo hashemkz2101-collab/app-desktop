@@ -1,0 +1,32 @@
+<UserControl x:Class="TapeKhashDesktop.Views.Khash.OrdersControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Loaded="OnLoaded">
+    <DockPanel Margin="16">
+        <StackPanel DockPanel.Dock="Top">
+            <TextBlock Text="ثبت سفارش جدید خاش" FontWeight="Bold" FontSize="15" Margin="0,0,0,8" />
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="CodeBox" Width="100" TextChanged="OnNumberPartChanged" />
+                <TextBox x:Name="RowBox" Width="80" TextChanged="OnNumberPartChanged" />
+                <TextBox x:Name="SimilarBox" Width="80" TextChanged="OnNumberPartChanged" />
+                <Button Content="پیشنهاد شماره بعدی" Click="OnSuggestClick" />
+                <Button Content="ثبت سفارش" Click="OnSubmitClick" />
+            </StackPanel>
+            <TextBlock x:Name="PreviewText" Text="شماره: —" Margin="4,4,4,4" />
+            <TextBlock x:Name="ErrorText" Foreground="Red" TextWrapping="Wrap" Margin="4,4,4,0" />
+            <TextBlock x:Name="MessageText" Foreground="Green" TextWrapping="Wrap" Margin="4,4,4,8" />
+
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,8">
+                <RadioButton x:Name="FilterAll" Content="همه" GroupName="filter" IsChecked="True" Checked="OnFilterChanged" Margin="0,0,10,0" />
+                <RadioButton x:Name="FilterPendingReceive" Content="منتظر دریافت" GroupName="filter" Checked="OnFilterChanged" Margin="0,0,10,0" />
+                <RadioButton x:Name="FilterPendingPrint" Content="منتظر چاپ" GroupName="filter" Checked="OnFilterChanged" Margin="0,0,10,0" />
+                <RadioButton x:Name="FilterPendingSendBack" Content="منتظر ارسال" GroupName="filter" Checked="OnFilterChanged" Margin="0,0,10,0" />
+                <RadioButton x:Name="FilterCompleted" Content="تکمیل‌شده" GroupName="filter" Checked="OnFilterChanged" />
+            </StackPanel>
+        </StackPanel>
+
+        <ScrollViewer>
+            <StackPanel x:Name="OrdersPanel" />
+        </ScrollViewer>
+    </DockPanel>
+</UserControl>

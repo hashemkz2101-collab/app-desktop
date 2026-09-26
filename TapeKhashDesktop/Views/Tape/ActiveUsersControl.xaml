@@ -1,0 +1,17 @@
+<UserControl x:Class="TapeKhashDesktop.Views.Tape.ActiveUsersControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Loaded="OnLoaded">
+    <DockPanel Margin="12">
+        <TextBlock DockPanel.Dock="Top" Text="کاربرانی که هم‌اکنون تپه‌ی فعال دارند" FontWeight="Bold" Margin="0,0,0,8" />
+        <ListBox x:Name="List" BorderThickness="0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="#DDD" BorderThickness="1" Padding="8" Margin="0,3">
+                        <TextBlock Text="{Binding}" />
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</UserControl>

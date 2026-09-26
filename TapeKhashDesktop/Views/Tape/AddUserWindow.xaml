@@ -1,0 +1,25 @@
+<Window x:Class="TapeKhashDesktop.Views.Tape.AddUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="کاربر جدید" Height="420" Width="360" FlowDirection="RightToLeft"
+        WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <StackPanel Margin="16">
+        <TextBox x:Name="UsernameBox" />
+        <TextBlock Text="نام کاربری" Foreground="Gray" FontSize="11" Margin="8,-2,0,8" />
+        <TextBox x:Name="PasswordBox" />
+        <TextBlock Text="رمز عبور" Foreground="Gray" FontSize="11" Margin="8,-2,0,8" />
+        <TextBox x:Name="DisplayNameBox" />
+        <TextBlock Text="نام نمایشی" Foreground="Gray" FontSize="11" Margin="8,-2,0,8" />
+
+        <CheckBox x:Name="IsAdminCheck" Content="مدیر سیستم" Margin="4,8,4,0" />
+        <CheckBox x:Name="TapeAccessCheck" Content="دسترسی تپه‌ها" IsChecked="True" Margin="4,4,4,0" />
+        <CheckBox x:Name="KhashAccessCheck" Content="دسترسی خاش" Margin="4,4,4,0" />
+
+        <TextBlock x:Name="ErrorText" Foreground="Red" TextWrapping="Wrap" Margin="4,8,4,0" />
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,16,0,0">
+            <Button Content="ثبت" Click="OnSaveClick" />
+            <Button Content="انصراف" Click="OnCancelClick" />
+        </StackPanel>
+    </StackPanel>
+</Window>

@@ -1,0 +1,20 @@
+<UserControl x:Class="TapeKhashDesktop.Views.Khash.KhashMainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:TapeKhashDesktop.Views.Khash">
+    <DockPanel>
+        <Border DockPanel.Dock="Top" Background="#19768C" Padding="12">
+            <Grid>
+                <TextBlock Text="مدیریت فاکتور خاش" Foreground="White" FontSize="16" VerticalAlignment="Center" />
+                <Button Content="بازگشت" HorizontalAlignment="Left" Click="OnBackClick" />
+            </Grid>
+        </Border>
+        <TabControl>
+            <TabItem Header="فاکتورها"><local:InvoicesControl /></TabItem>
+            <TabItem Header="پرداخت‌ها"><local:PaymentsControl /></TabItem>
+            <TabItem Header="سفارشات خاش"><local:OrdersControl /></TabItem>
+            <TabItem Header="نیروها"><local:EmployeesControl /></TabItem>
+            <TabItem Header="گزارش‌ها"><local:ReportsControl /></TabItem>
+        </TabControl>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,12 @@
+<UserControl x:Class="TapeKhashDesktop.Views.Tape.ExcelImportControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Margin="16" Width="420" HorizontalAlignment="Center">
+        <TextBlock Text="ایمپورت اکسل کد تپه / کد باکس" FontWeight="Bold" FontSize="15" Margin="0,0,0,4" />
+        <TextBlock Text="ستون اول: کد تپه (اسم فایل در پوشه gol) — ستون دوم: کد باکس" Foreground="Gray" TextWrapping="Wrap" Margin="0,0,0,12" />
+        <Button Content="انتخاب فایل اکسل (.xlsx)" Click="OnPickClick" Height="36" />
+        <ProgressBar x:Name="Progress" IsIndeterminate="True" Height="4" Visibility="Collapsed" Margin="4,12,4,0" />
+        <TextBlock x:Name="ErrorText" Foreground="Red" TextWrapping="Wrap" Margin="4,8,4,0" />
+        <TextBlock x:Name="ResultText" Foreground="Green" TextWrapping="Wrap" Margin="4,4,4,0" />
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,11 @@
+<Window x:Class="TapeKhashDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="مدیریت تپه و فاکتور خاش" Height="720" Width="1080"
+        FlowDirection="RightToLeft"
+        FontFamily="Segoe UI" FontSize="14"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ContentControl x:Name="RootContent" />
+    </Grid>
+</Window>

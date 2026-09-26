@@ -1,0 +1,23 @@
+<UserControl x:Class="TapeKhashDesktop.Views.Tape.FileSyncControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Loaded="OnLoaded">
+    <DockPanel Margin="16">
+        <TextBlock DockPanel.Dock="Top" FontWeight="Bold" FontSize="15" Margin="0,0,0,4"
+                   Text="همگام‌سازی پوشه‌ی file هاست با سیستم" />
+        <TextBlock DockPanel.Dock="Top" Foreground="Gray" TextWrapping="Wrap" Margin="0,0,0,12"
+                   Text="فایل‌های جدید در هاست دانلود، و فایل‌های جدید در پوشه‌ی محلی آپلود می‌شوند. هیچ فایلی حذف نمی‌شود (برای جلوگیری از آسیب به سایت شما)." />
+
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,0,0,8">
+            <TextBox x:Name="FolderBox" Width="380" IsReadOnly="True" />
+            <Button Content="انتخاب پوشه‌ی محلی" Click="OnChooseFolderClick" />
+            <Button Content="همگام‌سازی الان" Click="OnSyncClick" />
+        </StackPanel>
+
+        <ProgressBar x:Name="Progress" DockPanel.Dock="Top" IsIndeterminate="True" Height="4" Visibility="Collapsed" Margin="0,0,0,8" />
+        <TextBlock x:Name="ErrorText" DockPanel.Dock="Top" Foreground="Red" TextWrapping="Wrap" />
+        <TextBlock x:Name="SummaryText" DockPanel.Dock="Top" Foreground="Green" TextWrapping="Wrap" Margin="0,4,0,8" />
+
+        <ListBox x:Name="LogList" BorderThickness="0" />
+    </DockPanel>
+</UserControl>
